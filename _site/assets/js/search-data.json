@@ -44,15 +44,15 @@
     "doc": "home",
     "title": "luna docs",
     "content": "this the documentation page of the luna software engine. if you find any faults or problems pls open an issue on github . this engine is still in earlly development / it’s pre alpha stage . So as a result there will be many bugs. If tou have found a bug pls open issue on github . getting started! . ",
-    "url": "/docs/#luna-docs",
+    "url": "/#luna-docs",
     
-    "relUrl": "/docs/#luna-docs"
+    "relUrl": "/#luna-docs"
   },"7": {
     "doc": "home",
     "title": "home",
     "content": " ",
-    "url": "/docs/",
+    "url": "/",
     
-    "relUrl": "/docs/"
+    "relUrl": "/"
   }
 }
