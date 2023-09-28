@@ -6,7 +6,7 @@ layout: default
 # creating a new project:
 to create a new project press the button on the right
 and you should see the following popup:
-![project creation](/images/projectManegementScreen-newProject.png)
+![project creation](../images/projectManegementScreen-newProject.png)
 if you wan't to change the directory where the project is created press browse button.
 
 {: .note}

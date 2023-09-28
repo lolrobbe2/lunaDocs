@@ -10,3 +10,5 @@ callouts:
   note:
     title: note
     color: yellow
+
+basewebsite: /docs

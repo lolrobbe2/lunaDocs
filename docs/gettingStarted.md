@@ -10,10 +10,10 @@ To be able to use the engine you should ofcoarse have it installed if you haven'
 
 # creating your first project
 when you first open the engine you will see the project management screen.
-![project screen](/images/projectManegementScreen-blank.png)
+![project screen](../images/projectManegementScreen-blank.png)
 to start press the create project button on the right.
 and you should see the following popup:
-![project creation](/images/projectManegementScreen-newProject.png)
+![project creation](../images/projectManegementScreen-newProject.png)
 if you wan't to change the directory where the project is created press browse button.
 
 {: .note}

@@ -16,6 +16,6 @@ if you find any faults or problems pls open an issue on [github](https://github.
 > If tou have found a bug pls open issue on [github](https://github.com/lolrobbe2/luna/issues)
 
 <span class="fs-8">
-[getting started!](/docs/gettingStarted.html){: .btn .btn-green .mr-auto}
+[getting started!](gettingStarted.html){: .btn .btn-green .mr-auto}
 </span>
 
