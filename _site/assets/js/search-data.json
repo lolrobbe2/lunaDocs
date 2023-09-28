@@ -34,18 +34,25 @@
     
     "relUrl": "/docs/gettingStarted.html#creating-your-first-project"
   },"5": {
+    "doc": "importing an existing project",
+    "title": "importing an existing project",
+    "content": " ",
+    "url": "/docs/projects/importing%20a%20project.html",
+    
+    "relUrl": "/docs/projects/importing%20a%20project.html"
+  },"6": {
     "doc": "home",
     "title": "luna docs",
     "content": "this the documentation page of the luna software engine. if you find any faults or problems pls open an issue on github . this engine is still in earlly development / it’s pre alpha stage . So as a result there will be many bugs. If tou have found a bug pls open issue on github . getting started! . ",
-    "url": "/docs/home.html#luna-docs",
+    "url": "/docs/#luna-docs",
     
-    "relUrl": "/docs/home.html#luna-docs"
-  },"6": {
+    "relUrl": "/docs/#luna-docs"
+  },"7": {
     "doc": "home",
     "title": "home",
     "content": " ",
-    "url": "/docs/home.html",
+    "url": "/docs/",
     
-    "relUrl": "/docs/home.html"
+    "relUrl": "/docs/"
   }
 }
