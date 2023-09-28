@@ -1,0 +1,51 @@
+{"0": {
+    "doc": "create a new project",
+    "title": "creating a new project:",
+    "content": "to create a new project press the button on the right and you should see the following popup: if you wan’t to change the directory where the project is created press browse button. by default the directory from wich the engine is launched is used by default as project directory. all the project files will be put inside the projectDirectory. because of this it is highly recommended to select the folder where you want the project to be located. then pick a project name and press create folder. it is in this folder that all the project files will be created. after this the project editor will open up and with a blank unsaved scene. ",
+    "url": "/docs/projects/create%20a%20new%20project.html#creating-a-new-project",
+    
+    "relUrl": "/docs/projects/create%20a%20new%20project.html#creating-a-new-project"
+  },"1": {
+    "doc": "create a new project",
+    "title": "create a new project",
+    "content": " ",
+    "url": "/docs/projects/create%20a%20new%20project.html",
+    
+    "relUrl": "/docs/projects/create%20a%20new%20project.html"
+  },"2": {
+    "doc": "getting started",
+    "title": "getting started",
+    "content": " ",
+    "url": "/docs/gettingStarted.html",
+    
+    "relUrl": "/docs/gettingStarted.html"
+  },"3": {
+    "doc": "getting started",
+    "title": "installing luna",
+    "content": "To be able to use the engine you should ofcoarse have it installed if you haven’t done this press the link above. ",
+    "url": "/docs/gettingStarted.html#installing-luna",
+    
+    "relUrl": "/docs/gettingStarted.html#installing-luna"
+  },"4": {
+    "doc": "getting started",
+    "title": "creating your first project",
+    "content": "when you first open the engine you will see the project management screen. to start press the create project button on the right. and you should see the following popup: if you wan’t to change the directory where the project is created press browse button. by default the directory from wich the engine is launched is used by default as project directory. all the project files will be put inside the projectDirectory. because of this it is highly recommended to select the folder where you want the project to be located. then pick a project name and press create folder. it is in this folder that all the project files will be created. after this the project editor will open up and with a blank unsaved scene. you can find the visual studio solution inside the project folder. the project has already been created with an example script. goodluck! . ",
+    "url": "/docs/gettingStarted.html#creating-your-first-project",
+    
+    "relUrl": "/docs/gettingStarted.html#creating-your-first-project"
+  },"5": {
+    "doc": "home",
+    "title": "luna docs",
+    "content": "this the documentation page of the luna software engine. if you find any faults or problems pls open an issue on github . this engine is still in earlly development / it’s pre alpha stage . So as a result there will be many bugs. If tou have found a bug pls open issue on github . getting started! . ",
+    "url": "/docs/home.html#luna-docs",
+    
+    "relUrl": "/docs/home.html#luna-docs"
+  },"6": {
+    "doc": "home",
+    "title": "home",
+    "content": " ",
+    "url": "/docs/home.html",
+    
+    "relUrl": "/docs/home.html"
+  }
+}
