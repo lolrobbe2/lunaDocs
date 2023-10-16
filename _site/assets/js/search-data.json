@@ -36,7 +36,7 @@
   },"5": {
     "doc": "importing an existing project",
     "title": "importing an existing project",
-    "content": " ",
+    "content": "to import you should be on the project mangement screen: Then press the import project button, after that you should see the following popup window: then click browse and select the file with the name of your project and wich has the .lprj extension. after that click the import and open button to edit your project. importing a project copies the project file to the appdata folder allowing it to be detected by the engine on startup. ",
     "url": "/docs/projects/importing%20a%20project.html",
     
     "relUrl": "/docs/projects/importing%20a%20project.html"
@@ -54,5 +54,89 @@
     "url": "/docs/",
     
     "relUrl": "/docs/"
+  },"8": {
+    "doc": "net socket",
+    "title": "netSocket",
+    "content": "netSocket is the most lowlevel networking component inside the engine and is thus the most versatile. But that means it is also the most complected to work with . content: . | supported protocols / protocol enum | creating a netSocket object | binding a socket to a port | . ",
+    "url": "/docs/networking/netSocket.html#netsocket",
+    
+    "relUrl": "/docs/networking/netSocket.html#netsocket"
+  },"9": {
+    "doc": "net socket",
+    "title": "supported protocols / protocol enum",
+    "content": "the netSocket class currently only support 2 network protocols TCP(Transmission Control Protocol) and UDP(Universal Datagram Protocol). public enum Protocol { TCP, UDP } . ",
+    "url": "/docs/networking/netSocket.html#supported-protocols--protocol-enum",
+    
+    "relUrl": "/docs/networking/netSocket.html#supported-protocols--protocol-enum"
+  },"10": {
+    "doc": "net socket",
+    "title": "creating a netSocket object",
+    "content": "to use the netSocket you need to create a netsocket object. using Luna; internal class start : Node { NetSocket socket = new NetSocket(); } . ",
+    "url": "/docs/networking/netSocket.html#creating-a-netsocket-object",
+    
+    "relUrl": "/docs/networking/netSocket.html#creating-a-netsocket-object"
+  },"11": {
+    "doc": "net socket",
+    "title": "binding a socket to a port",
+    "content": "to bind a socket to a certain port you need to call the Bind function on that socket . using Luna; internal class start : Node { NetSocket socket = new NetSocket(); override public void Ready() { socket.Bind(8080, \"*\", Protocol.TCP); } } . socket binding to a custom ip address is not working at the moment ! . bind can only be called once on a socket! . ",
+    "url": "/docs/networking/netSocket.html#binding-a-socket-to-a-port",
+    
+    "relUrl": "/docs/networking/netSocket.html#binding-a-socket-to-a-port"
+  },"12": {
+    "doc": "net socket",
+    "title": "params:",
+    "content": "| param name | param type | . | port | UInt16 | . | bindAddress | String | . | protocol | Enum protocol | . ",
+    "url": "/docs/networking/netSocket.html#params",
+    
+    "relUrl": "/docs/networking/netSocket.html#params"
+  },"13": {
+    "doc": "net socket",
+    "title": "listening on a socket",
+    "content": "to listen for incomming connections call the Listen function . using Luna; internal class start : Node { NetSocket socket = new NetSocket(); override public void Ready() { socket.Listen(350); } } . ",
+    "url": "/docs/networking/netSocket.html#listening-on-a-socket",
+    
+    "relUrl": "/docs/networking/netSocket.html#listening-on-a-socket"
+  },"14": {
+    "doc": "net socket",
+    "title": "params:",
+    "content": "| param name | param type | . | max incomming connections | int | . a socket must be bound to a port and a corresponding protocol before listen is called otherwise an error will be thrown and the socket might become invalid. max incomming connections must be between 200 and 65536 (2^16) otherwise the value will be corrected and an error will be thrown. ",
+    "url": "/docs/networking/netSocket.html#params-1",
+    
+    "relUrl": "/docs/networking/netSocket.html#params-1"
+  },"15": {
+    "doc": "net socket",
+    "title": "accepting incoming connections:",
+    "content": "after having bound the connection and called listen on the socket you can start to accept incoming connections. ",
+    "url": "/docs/networking/netSocket.html#accepting-incoming-connections",
+    
+    "relUrl": "/docs/networking/netSocket.html#accepting-incoming-connections"
+  },"16": {
+    "doc": "net socket",
+    "title": "net socket",
+    "content": " ",
+    "url": "/docs/networking/netSocket.html",
+    
+    "relUrl": "/docs/networking/netSocket.html"
+  },"17": {
+    "doc": "networking",
+    "title": "networking",
+    "content": "Modern networking has undergone a remarkable transformation, fundamentally changing the way we connect, communicate, and collaborate in the digital age. It encompasses a range of technologies and practices that have evolved to meet the growing demands of our interconnected world. ",
+    "url": "/docs/networking/networking.html",
+    
+    "relUrl": "/docs/networking/networking.html"
+  },"18": {
+    "doc": "networking",
+    "title": "networking inside luna",
+    "content": "the luna engine contains multiple options for networking . from the baremetal netSocket to the HTTTPserver and HTTPclient. ",
+    "url": "/docs/networking/networking.html#networking-inside-luna",
+    
+    "relUrl": "/docs/networking/networking.html#networking-inside-luna"
+  },"19": {
+    "doc": "projects",
+    "title": "projects",
+    "content": "a projects contains all the assets and building blocks to create and develop an application! and hence it is very important now the ins and out’s of how projects work in the engine. ",
+    "url": "/docs/projects/projects.html",
+    
+    "relUrl": "/docs/projects/projects.html"
   }
 }
