@@ -97,3 +97,16 @@ internal class start : Node
 
 # accepting incoming connections:
 after having bound the connection and called listen on the socket you can start to accept incoming connections.
+
+```cs
+using Luna;
+
+internal class start : Node
+{
+    NetSocket socket = new NetSocket();
+    override public void Ready()
+    {
+
+    }
+}
+```

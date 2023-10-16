@@ -13,3 +13,7 @@ callouts:
 
 basewebsite: /docs
 website: https://lolrobbe2.github.io/lunaDocs/docs
+
+aux_links:
+    "Luna engine on Github":
+    - "//github.com/lolrobbe2/luna"
