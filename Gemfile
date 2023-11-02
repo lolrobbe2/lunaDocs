@@ -7,3 +7,4 @@ gem "jekyll"
 gem "jekyll-remote-theme"
 gem "jekyll-seo-tag"
 gem "just-the-docs"
+gem 'jekyll-toc'

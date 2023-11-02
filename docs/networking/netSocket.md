@@ -10,10 +10,14 @@ nav_order: 2
 netSocket is the most lowlevel networking component inside the engine and is thus the most versatile.
 But that means it is also the most complected to work with
 
-> content:
-> - [supported protocols / protocol enum](#netsocket)
-> - [creating a netSocket object](#creating-a-netsocket-object)
-> - [binding a socket to a port](#binding-a-socket-to-a-port)
+<details open markdown="block">
+  <summary>
+    Table of contents
+  </summary>
+  {: .text-delta }
+1. TOC
+{:toc}
+</details>
 
 # supported protocols / protocol enum
 the netSocket class currently only support 2 network protocols TCP(Transmission Control Protocol) and UDP(Universal Datagram Protocol).
@@ -25,6 +29,26 @@ the netSocket class currently only support 2 network protocols TCP(Transmission 
      UDP
  }
 
+```
+
+# socket error enum
+this enumeration show the possible errors the socket or derivatives can return
+```cs
+public enum SocketError
+{
+    SUCCESS,
+    FAILED,
+    INIT_FAILED,
+    BIND_FAILED,
+    CONNECT_FAILED,
+    INVALID_IP_ADDRESS,
+    ALREADY_INIT,
+    CONNECTION_CLOSED,
+    OUT_OF_BUFFER_MEMORY,
+    BUSY,
+    SOCKET_INVALID,
+    FILE_EOF
+}
 ```
 
 # creating a netSocket object

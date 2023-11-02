@@ -6,7 +6,7 @@ nav_order: 1
 
 # getting started
 ## [installing luna](https://github.com/lolrobbe2/luna/releases/latest/download/apollo.zip)
-To be able to use the engine you should ofcoarse have it installed if you haven't done this press the link above.
+To be able to use the engine you should of coarse have it installed if you haven't done this press the link above.
 
 # creating your first project
 when you first open the engine you will see the project management screen.
