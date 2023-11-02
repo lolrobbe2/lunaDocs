@@ -9,7 +9,7 @@ nav_order: 2
 # Ip (internet protocol)
 the Ip static class is a collection of some very helpful helper functions.
 
-## dns resolving (blocking)
+## dns/hostname resolving (blocking)
 hostname resolveing can be done like this:
 
 1) resolve as a string (127.0.0.1)
@@ -26,5 +26,5 @@ hostname resolveing can be done like this:
 > this way of resolving a host name is blocking i.e it waits untill the hostname is resolved.
 > for non blocking options [see](#dns-resolving-non-blocking)
 
-## dns resolving (non blocking)
+## dns/hostname resolving (non blocking)
 
