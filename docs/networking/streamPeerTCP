@@ -1,9 +1,0 @@
---- 
-title: streamPeerTCP
-layout: default
-parent: networking
----
-
-# streamPeerTCP
-
-streamPeerTCP is a lowlevel networking component inside the engine and is built upon the netSocket module

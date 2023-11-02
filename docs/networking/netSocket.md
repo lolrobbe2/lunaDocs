@@ -2,6 +2,7 @@
 title: net socket
 layout: default
 parent: networking
+nav_order: 2
 ---
 
 # netSocket
