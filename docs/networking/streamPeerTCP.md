@@ -5,6 +5,9 @@ layout: default
 nav_order: 3
 toc: true
 ---
+[SocketError]: /docs/networking/netSocket.html#socket-error-enum
+[Status]: /docs/networking/streamPeerTCP.html#connection-status-enum
+[IpAddress]: /docs/networking/IpAddress.html
 # streamPeerTCP
 
 streamPeerTCP is a lowlevel networking component inside the engine and is built upon the netSocket module
@@ -62,7 +65,7 @@ public class start : Node
 
 | param name               | param type                                     |
 |:-------------------------|:-----------------------------------------------|
-|address                   |[IpAddress](/docs/networking/IpAddress.html)    |
+|address                   |[IpAddress]    |
 |port                      |int                                             |
 
 ## get the connection status of the streamPeerTCP object
@@ -86,17 +89,38 @@ internal class Start : Node
 }
 ```
 
-## methods
+# methods
+
+## methods overview
 
 | return type                                                        | method                               |
 |:-------------------------------------------------------------------|:-------------------------------------|
-|[SocketError](/docs/networking/netSocket.html#socket-error-enum)    |Bind(int Port, [IpAddress](/docs/networking/IpAddress.html)  Host)        |
-|[SocketError](/docs/networking/netSocket.html#socket-error-enum)    |ConnectToHost([IpAddress](/docs/networking/IpAddress.html) Host,int Port)|
-|[SocketError](/docs/networking/netSocket.html#socket-error-enum)    |Poll()                                |
-|[Status](/docs/networking/streamPeerTCP.html#connection-status-enum)|GetStatus()                           |
-|[IpAddress](/docs/networking/IpAddress.html)|GetConnectedHost()|
+|[SocketError]    |[Bind](/docs/networking/streamPeerTCP.html#socketerror-bindint-port-ipaddress--host)(int Port, [IpAddress]  Host)        |
+|[SocketError]  |[ConnectToHost](/docs/networking/streamPeerTCP.html#socketerror-connecttohostipaddress--hostint-port)([IpAddress] Host,int Port)|
+|[SocketError]    |Poll()                                |
+|[Status] |GetStatus()                           |
+|[IpAddress]|GetConnectedHost()|
 |int|GetConnectedPort()|
 |int|GetLocalPort()|
 |void|DisconnectFromHost()|
-|[SocketError](/docs/networking/netSocket.html#socket-error-enum) |PutData(byte[] Data)|
-|[SocketError](/docs/networking/netSocket.html#socket-error-enum) |PutPartialData(byte[] Data,out int BytesSent)|
+|[SocketError] |PutData(byte[] Data)|
+|[SocketError] |PutPartialData(byte[] Data,out int BytesSent)|
+|[SocketError] |GetData(byte[] Buffer)|
+|[SocketError] |GetPartialData(byte[] Buffer,out int Received)|
+|int|GetAvailableBytes()|
+
+## method descriptions
+
+### [SocketError] Bind(int Port, [IpAddress]  Host)
+
+> Opens the TCP socket, and binds it to the specified local address.
+> This method is generally not needed, and only used to force the subsequent call 
+> to connect_to_host to use the specified host and port as source address.This can be desired in some NAT punchthrough techniques,
+> or when forcing the source network interface.
+
+### [SocketError] ConnectToHost([IpAddress]  Host,int port)
+> Connects to the specified host:port pair. A hostname will be resolved if valid.
+
+{: .note}
+port is between 0-65536 inclusive!
+
