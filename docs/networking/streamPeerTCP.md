@@ -5,9 +5,25 @@ layout: default
 nav_order: 3
 toc: true
 ---
+[int]: https://learn.microsoft.com/en-us/dotnet/csharp/language-reference/builtin-types/integral-numeric-types
+
 [SocketError]: /docs/networking/netSocket.html#socket-error-enum
 [Status]: /docs/networking/streamPeerTCP.html#connection-status-enum
 [IpAddress]: /docs/networking/IpAddress.html
+
+[Bind]: /docs/networking/streamPeerTCP.html#socketerror-bindint-port-ipaddress--host
+[ConnectToHost]: /docs/networking/streamPeerTCP.html#socketerror-connecttohostipaddress--hostint-port
+[Poll]: /docs/networking/streamPeerTCP.html#socketerror-poll
+[GetStatus]: /docs/networking/streamPeerTCP.html#status-getstatus
+[GetConnectedHost]: /docs/networking/streamPeerTCP.html#ipaddress-getconnectedhost
+[GetConnectedPort]: /docs/networking/streamPeerTCP.html#ipaddress-getconnectedhost
+[GetLocalPort]: /docs/networking/streamPeerTCP.html#int-getlocalport
+[DisconnectFromHost]: /docs/networking/streamPeerTCP.html#void-disconnectfromhost
+[PutData]: /docs/networking/streamPeerTCP.html#socketerror-putdatabyte-data
+[PutPartialData]: /docs/networking/streamPeerTCP.html#socketerror-putpartialdatabyte-dataout-int-bytessent
+[GetData]: /docs/networking/streamPeerTCP.html#socketerror-getdatabyte-buffer
+[GetPartialData]: /docs/networking/streamPeerTCP.html#socketerror-getpartialdatabyte-bufferout-int-received
+[GetAvailableBytes]: /docs/networking/streamPeerTCP.html#[IpAddress]-getavailablebytes
 # streamPeerTCP
 
 streamPeerTCP is a lowlevel networking component inside the engine and is built upon the netSocket module
@@ -63,10 +79,6 @@ public class start : Node
 ```
 ### params
 
-| param name               | param type                                     |
-|:-------------------------|:-----------------------------------------------|
-|address                   |[IpAddress]    |
-|port                      |int                                             |
 
 ## get the connection status of the streamPeerTCP object
 
@@ -74,7 +86,7 @@ to get the connection status of the tcpClient you just have to call the GetStatu
 
 ```cs
 using luna;
-internal class Start : Node
+[IpAddress]ernal class Start : Node
 {
     streamPeerTCP tcpClient = new streamPeerTCP();
 
@@ -95,32 +107,96 @@ internal class Start : Node
 
 | return type                                                        | method                               |
 |:-------------------------------------------------------------------|:-------------------------------------|
-|[SocketError]    |[Bind](/docs/networking/streamPeerTCP.html#socketerror-bindint-port-ipaddress--host)(int Port, [IpAddress]  Host)        |
-|[SocketError]  |[ConnectToHost](/docs/networking/streamPeerTCP.html#socketerror-connecttohostipaddress--hostint-port)([IpAddress] Host,int Port)|
-|[SocketError]    |Poll()                                |
-|[Status] |GetStatus()                           |
-|[IpAddress]|GetConnectedHost()|
-|int|GetConnectedPort()|
-|int|GetLocalPort()|
-|void|DisconnectFromHost()|
-|[SocketError] |PutData(byte[] Data)|
-|[SocketError] |PutPartialData(byte[] Data,out int BytesSent)|
-|[SocketError] |GetData(byte[] Buffer)|
-|[SocketError] |GetPartialData(byte[] Buffer,out int Received)|
-|int|GetAvailableBytes()|
+|[SocketError]                                                       |[Bind] ([int] Port, [IpAddress]  Host)  |
+|[SocketError]                                                       |[ConnectToHost] ([IpAddress] Host,[int] Port)|
+|[SocketError]    |[Poll] ()                    |
+|[Status] |[GetStatus] ()                           |
+|[IpAddress]|[GetConnectedHost] ()|
+|[int]|[GetConnectedPort] ()|
+|[int]|[GetLocalPort] ()|
+|void|[DisconnectFromHost] ()|
+|[SocketError] |[PutData] (byte[] Data)|
+|[SocketError] |[PutPartialData] (byte[] Data,out [int] BytesSent)|
+|[SocketError] |[GetData] (byte[] Buffer)|
+|[SocketError] |[GetPartialData] (byte[] Buffer,out [int] Received)|
+|[int]|[GetAvailableBytes] ()|
 
 ## method descriptions
 
-### [SocketError] Bind(int Port, [IpAddress]  Host)
+### [SocketError] Bind([int] Port, [IpAddress]  Host)
 
 > Opens the TCP socket, and binds it to the specified local address.
 > This method is generally not needed, and only used to force the subsequent call 
-> to connect_to_host to use the specified host and port as source address.This can be desired in some NAT punchthrough techniques,
+> to ConnectToHost to use the specified host and port as source address.This can be desired in some NAT punchthrough techniques,
 > or when forcing the source network interface.
+>
+> | param name               | param type                                     |
+> |:-------------------------|:-----------------------------------------------|
+> |port                      |[int]                                             |
+> |Host                   |[IpAddress]                                     |
 
-### [SocketError] ConnectToHost([IpAddress]  Host,int port)
-> Connects to the specified host:port pair. A hostname will be resolved if valid.
+
+### [SocketError] ConnectToHost([IpAddress]  Host,[int] port)
+> Connects to the specified host:port pair.
+>
+> | param name               | param type                                     |
+> |:-------------------------|:-----------------------------------------------|
+> |Host                      |[IpAddress]                                     |
+> |port                      |[int]                                             |
 
 {: .note}
 port is between 0-65536 inclusive!
 
+
+### [SocketError] Poll() 
+> Poll the socket, updating its state. see [GetStatus].
+
+### [Status] GetStatus()
+> returns the current [Status] of the socket
+
+### [IpAddress] GetConnectedHost()
+> returns the IpAdress of the connected host.
+
+### [int] GetConnectedPort()
+> returns the port of the connected host
+
+### [int] GetLocalPort()
+> returns the native/local port.
+
+### void DisconnectFromHost()
+> disconnects from the currently connected host.
+
+### [SocketError] PutData(byte[] Data)
+> Sends a chunk of data through the connection, 
+> blocking if necessary until the data is done sending. This function returns a [SocketError] code.
+>
+> | param name               | param type                                     |
+> |:-------------------------|:-----------------------------------------------|
+> | data                     |byte[]                                          |
+
+### [SocketError] PutPartialData(byte[] Data,out [int] BytesSent)
+> Sends a partial chunk of data through the connection.
+> This function returns an [SocketError] code.
+>
+> | param name               | param type                                     |
+> |:-------------------------|:-----------------------------------------------|
+> | data                     | byte[]                                         |
+> | BytesSent                | out [int]                                        |
+
+### [SocketError] GetData(byte[] Buffer)
+> Gets data and fills the Buffer Array (blocking)
+>
+> | param name               | param type                                     |
+> |:-------------------------|:-----------------------------------------------|
+> | buffer                   | byte[]                                         |
+
+### [SocketError] GetPartialData(byte[] Buffer,out [int] Received)
+> Gets partial data and fills the Buffer Array. (non-blocking)
+>
+> | param name               | param type                                     |
+> |:-------------------------|:-----------------------------------------------|
+> | buffer                   | byte[]                                         |
+> | Received                 | out [int]                                        |
+
+### [int] GetAvailableBytes()
+> Returns the currently available bytes to read.
