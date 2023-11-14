@@ -7,23 +7,23 @@ toc: true
 ---
 [int]: https://learn.microsoft.com/en-us/dotnet/csharp/language-reference/builtin-types/integral-numeric-types
 
-[SocketError]: /docs/networking/netSocket.html#socket-error-enum
-[Status]: /docs/networking/streamPeerTCP.html#connection-status-enum
-[IpAddress]: /docs/networking/IpAddress.html
+[SocketError]:  netSocket.html#socket-error-enum
+[Status]: #connection-status-enum
+[IpAddress]: IpAddress.html
 
-[Bind]: /docs/networking/streamPeerTCP.html#socketerror-bindint-port-ipaddress--host
-[ConnectToHost]: /docs/networking/streamPeerTCP.html#socketerror-connecttohostipaddress--hostint-port
-[Poll]: /docs/networking/streamPeerTCP.html#socketerror-poll
-[GetStatus]: /docs/networking/streamPeerTCP.html#status-getstatus
-[GetConnectedHost]: /docs/networking/streamPeerTCP.html#ipaddress-getconnectedhost
-[GetConnectedPort]: /docs/networking/streamPeerTCP.html#ipaddress-getconnectedhost
-[GetLocalPort]: /docs/networking/streamPeerTCP.html#int-getlocalport
-[DisconnectFromHost]: /docs/networking/streamPeerTCP.html#void-disconnectfromhost
-[PutData]: /docs/networking/streamPeerTCP.html#socketerror-putdatabyte-data
-[PutPartialData]: /docs/networking/streamPeerTCP.html#socketerror-putpartialdatabyte-dataout-int-bytessent
-[GetData]: /docs/networking/streamPeerTCP.html#socketerror-getdatabyte-buffer
-[GetPartialData]: /docs/networking/streamPeerTCP.html#socketerror-getpartialdatabyte-bufferout-int-received
-[GetAvailableBytes]: /docs/networking/streamPeerTCP.html#[IpAddress]-getavailablebytes
+[Bind]: #socketerror-bindint-port-ipaddress--host
+[ConnectToHost]: #socketerror-connecttohostipaddress--hostint-port
+[Poll]: #socketerror-poll
+[GetStatus]: #status-getstatus
+[GetConnectedHost]: #ipaddress-getconnectedhost
+[GetConnectedPort]: #ipaddress-getconnectedhost
+[GetLocalPort]: #int-getlocalport
+[DisconnectFromHost]: #void-disconnectfromhost
+[PutData]: #socketerror-putdatabyte-data
+[PutPartialData]: #socketerror-putpartialdatabyte-dataout-int-bytessent
+[GetData]: #socketerror-getdatabyte-buffer
+[GetPartialData]: #socketerror-getpartialdatabyte-bufferout-int-received
+[GetAvailableBytes]: #[IpAddress]-getavailablebytes
 # streamPeerTCP
 
 streamPeerTCP is a lowlevel networking component inside the engine and is built upon the netSocket module
