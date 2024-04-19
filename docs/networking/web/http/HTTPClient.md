@@ -9,6 +9,14 @@ nav_order: 1
 
 [streamPeerTCP]: ../../streamPeerTCP.html
 [MDNDocs]: https://developer.mozilla.org/en-US/docs/Web/HTTP/Methods
+[SocketError]:  ../../netSocket.html#socket-error-enum
+[string]: https://learn.microsoft.com/en-us/dotnet/csharp/programming-guide/strings/
+[int]: https://learn.microsoft.com/en-us/dotnet/csharp/language-reference/builtin-types/integral-numeric-types
+[void]: https://learn.microsoft.com/en-us/dotnet/csharp/language-reference/builtin-types/void
+
+[ConnectToHost]: #socketerror-connecttohoststring-hostint-port--80
+[HTTPClient.Method]: #methods
+[Request]: #void-requesthttpclientmethod-method-string-destination-json-headers-string-body
 # HTTP client
 The HTTP client is a high level networking component inside the engine build on top of the [streamPeerTCP] component.
 
@@ -23,7 +31,8 @@ public class start : Node
 ```
 
 ## http method
-for more information see [MDNDocs]
+this enumeration shows the available http methods,
+for more information see [MDNDocs].
 ```cs
 public enum Method
 {
@@ -38,3 +47,44 @@ public enum Method
     TRACE,
 };
 ```
+
+## http status
+current status of the HTTPClient
+```cs
+public enum Status
+{
+    STATUS_NONE,
+    STATUS_CONNECTING,
+    STATUS_CONNECTED,
+    STATUS_ERROR,
+    STATUS_REQUESTING,
+    STATUS_RECEIVING,
+    STATUS_DONE
+};
+```
+
+# methods
+
+## methods overview
+
+| return type                                                        | method                               |
+|:-------------------------------------------------------------------|:-------------------------------------|
+|[SocketError]                                                       | [ConnectToHost]                      |
+|[void]                                                              | [Request]                            |
+
+### [SocketError] ConnectToHost([string] Host,int port = 80)
+> connects the http client to a host http serve
+> 
+> | param name | param type  |
+> |:-----------|:------------|
+> |Host        |[string]     |
+> |Port        |[int]        |
+{: .note}
+will also connect to non http servers, it just won't be able to know whath to do with the HTTP response.
+
+### [void] Request([HTTPClient.Method] Method, [string] Destination, Json Headers, [string] body = "")
+> sends an HTPP request to the connected host.
+>
+> | param name | param type        |
+> |:-----------|:------------------|
+> |Method      |[HTTPClient.Method]|

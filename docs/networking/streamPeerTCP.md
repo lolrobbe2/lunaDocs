@@ -86,7 +86,7 @@ to get the connection status of the tcpClient you just have to call the GetStatu
 
 ```cs
 using luna;
-[IpAddress]ernal class Start : Node
+[IpAddress] public class Start : Node
 {
     streamPeerTCP tcpClient = new streamPeerTCP();
 
@@ -132,8 +132,8 @@ using luna;
 >
 > | param name               | param type                                     |
 > |:-------------------------|:-----------------------------------------------|
-> |port                      |[int]                                             |
-> |Host                   |[IpAddress]                                     |
+> |port                      |[int]                                           |
+> |Host                      |[IpAddress]                                     |
 
 
 ### [SocketError] ConnectToHost([IpAddress]  Host,[int] port)
@@ -142,7 +142,7 @@ using luna;
 > | param name               | param type                                     |
 > |:-------------------------|:-----------------------------------------------|
 > |Host                      |[IpAddress]                                     |
-> |port                      |[int]                                             |
+> |port                      |[int]                                           |
 
 {: .note}
 port is between 0-65536 inclusive!

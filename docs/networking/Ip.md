@@ -10,7 +10,7 @@ nav_order: 1
 the Ip static class is a collection of some very helpful helper functions.
 
 ## dns/hostname resolving (blocking)
-hostname resolveing can be done like this:
+hostname resolving can be done like this:
 
 1) resolve as a string (127.0.0.1)
 ```cs
@@ -23,7 +23,7 @@ hostname resolveing can be done like this:
 ```
 
 {: .warning}
-> this way of resolving a host name is blocking i.e it waits untill the hostname is resolved.
+> this way of resolving a host name is blocking I.E it waits untill the hostname is resolved.
 > for non blocking options [see](#dns-resolving-non-blocking)
 
 ## dns/hostname resolving (non blocking)
