@@ -13,10 +13,12 @@ nav_order: 1
 [string]: https://learn.microsoft.com/en-us/dotnet/csharp/programming-guide/strings/
 [int]: https://learn.microsoft.com/en-us/dotnet/csharp/language-reference/builtin-types/integral-numeric-types
 [void]: https://learn.microsoft.com/en-us/dotnet/csharp/language-reference/builtin-types/void
+[bool]: https://learn.microsoft.com/en-us/dotnet/csharp/language-reference/builtin-types/bool
 
 [ConnectToHost]: #socketerror-connecttohoststring-hostint-port--80
 [HTTPClient.Method]: #methods
 [Request]: #void-requesthttpclientmethod-method-string-destination-json-headers-string-body
+[HasResponse]: #bool-hasresponse
 # HTTP client
 The HTTP client is a high level networking component inside the engine build on top of the [streamPeerTCP] component.
 
@@ -71,6 +73,7 @@ public enum Status
 |:-------------------------------------------------------------------|:-------------------------------------|
 |[SocketError]                                                       | [ConnectToHost]                      |
 |[void]                                                              | [Request]                            |
+|
 
 ### [SocketError] ConnectToHost([string] Host,int port = 80)
 > connects the http client to a host http serve
@@ -79,6 +82,7 @@ public enum Status
 > |:-----------|:------------|
 > |Host        |[string]     |
 > |Port        |[int]        |
+
 {: .note}
 will also connect to non http servers, it just won't be able to know whath to do with the HTTP response.
 
@@ -88,3 +92,12 @@ will also connect to non http servers, it just won't be able to know whath to do
 > | param name | param type        |
 > |:-----------|:------------------|
 > |Method      |[HTTPClient.Method]|
+> |Destination |[string]           |
+> |Headers     |JSON               |
+> |body        |[string]           |
+### [bool] HasResponse()
+> Polls the HTPPClient for incomming response
+
+{: .warning}
+as soon a the http client is receiving a response [HasResponse] will return true.
+but at this point the body might not have been fully received. To know when the response body has not been fully received Status.STATUS_RECEIVING use the [GetStatus] function.
