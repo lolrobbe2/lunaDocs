@@ -14,6 +14,7 @@ nav_order: 1
 [int]: https://learn.microsoft.com/en-us/dotnet/csharp/language-reference/builtin-types/integral-numeric-types
 [void]: https://learn.microsoft.com/en-us/dotnet/csharp/language-reference/builtin-types/void
 [bool]: https://learn.microsoft.com/en-us/dotnet/csharp/language-reference/builtin-types/bool
+[byte]: https://learn.microsoft.com/en-us/dotnet/api/system.byte?view=net-8.0
 [Status]: #http-status
 
 [ConnectToHost]: #socketerror-connecttohoststring-hostint-port--80
@@ -80,7 +81,7 @@ public enum Status
 |[bool]                                                              | [HasResponse]                        |
 |[SocketError]                                                       | [Poll]                               |
 |[Status]                                                            | [GetStatus]                          |
-|[byte][]                                                            | [GetBody]                            |
+|[byte[]](https://learn.microsoft.com/en-us/dotnet/api/system.byte?view=net-8.0)                                                      | [GetBody]                            |
 |JSON                                                                | [GetHeaders]                         |
 
 ### [SocketError] ConnectToHost([string] Host,int port = 80)
@@ -119,7 +120,7 @@ but at this point the body might not have been fully received. To know when the 
 ### [Status] GetStatus()
 >  function to get the current HTTPClient see [Status].
 
-### [byte][] GetBody()
+### [byte[]](https://learn.microsoft.com/en-us/dotnet/api/system.byte?view=net-8.0) GetBody()
 > returns the respnse body as a [byte] array.
 
 ### Json GetHeaders()
