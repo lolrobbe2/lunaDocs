@@ -24,6 +24,7 @@ nav_order: 1
 [Poll]: #socketerror-poll
 [GetStatus]: #status-getstatus
 [GetHeaders]: #json-getheaders
+[GetBody]: #byte-getbody
 # HTTP client
 The HTTP client is a high level networking component inside the engine build on top of the [streamPeerTCP] component.
 
@@ -81,7 +82,7 @@ public enum Status
 |[bool]                                                              | [HasResponse]                        |
 |[SocketError]                                                       | [Poll]                               |
 |[Status]                                                            | [GetStatus]                          |
-|[byte[]](https://learn.microsoft.com/en-us/dotnet/api/system.byte?view=net-8.0)                                                      | [GetBody]                            |
+|[byte[]](https://learn.microsoft.com/en-us/dotnet/api/system.byte?view=net-8.0)| [GetBody]                 |
 |JSON                                                                | [GetHeaders]                         |
 
 ### [SocketError] ConnectToHost([string] Host,int port = 80)
