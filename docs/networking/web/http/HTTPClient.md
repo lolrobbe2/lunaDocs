@@ -14,11 +14,15 @@ nav_order: 1
 [int]: https://learn.microsoft.com/en-us/dotnet/csharp/language-reference/builtin-types/integral-numeric-types
 [void]: https://learn.microsoft.com/en-us/dotnet/csharp/language-reference/builtin-types/void
 [bool]: https://learn.microsoft.com/en-us/dotnet/csharp/language-reference/builtin-types/bool
+[Status]: #http-status
 
 [ConnectToHost]: #socketerror-connecttohoststring-hostint-port--80
 [HTTPClient.Method]: #methods
 [Request]: #void-requesthttpclientmethod-method-string-destination-json-headers-string-body
 [HasResponse]: #bool-hasresponse
+[Poll]: #socketerror-poll
+[GetStatus]: #status-getstatus
+[GetHeaders]: #json-getheaders
 # HTTP client
 The HTTP client is a high level networking component inside the engine build on top of the [streamPeerTCP] component.
 
@@ -73,7 +77,11 @@ public enum Status
 |:-------------------------------------------------------------------|:-------------------------------------|
 |[SocketError]                                                       | [ConnectToHost]                      |
 |[void]                                                              | [Request]                            |
-|
+|[bool]                                                              | [HasResponse]                        |
+|[SocketError]                                                       | [Poll]                               |
+|[Status]                                                            | [GetStatus]                          |
+|[byte][]                                                            | [GetBody]                            |
+|JSON                                                                | [GetHeaders]                         |
 
 ### [SocketError] ConnectToHost([string] Host,int port = 80)
 > connects the http client to a host http serve
@@ -95,9 +103,24 @@ will also connect to non http servers, it just won't be able to know whath to do
 > |Destination |[string]           |
 > |Headers     |JSON               |
 > |body        |[string]           |
+
 ### [bool] HasResponse()
-> Polls the HTPPClient for incomming response
+> checks the HTTPClient if a response is available.
+
+
+
+### [SocketError] Poll()
+> Polls the HTPPClient for incomming response.
 
 {: .warning}
 as soon a the http client is receiving a response [HasResponse] will return true.
 but at this point the body might not have been fully received. To know when the response body has not been fully received Status.STATUS_RECEIVING use the [GetStatus] function.
+
+### [Status] GetStatus()
+>  function to get the current HTTPClient see [Status].
+
+### [byte][] GetBody()
+> returns the respnse body as a [byte] array.
+
+### Json GetHeaders()
+> returns the response headers as a JSON object.
