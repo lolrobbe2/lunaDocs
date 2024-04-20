@@ -27,7 +27,7 @@ nav_order: 1
 # HTTP client
 The HTTP client is a high level networking component inside the engine build on top of the [streamPeerTCP] component.
 
-## creating a streamPeerTCP object.
+## creating a HTTPClient object.
 ```cs
 using Luna;
 
